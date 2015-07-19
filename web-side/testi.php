@@ -50,12 +50,28 @@
     });
 </script>
 
-<button  type="button" class="btn btn-lg btn-default" onclick="socket.emit('message', '/ch/01/mix/on');">Send OSC message</button>
+<?php
+
+// taulukko komennoista
+$kontrollit = array(
+	array( "caster 1 on", "/ch/01/mix/on", "button" ),
+	array( "caster 2 on", "/ch/02/mix/on", "button" ),
+	array( "caster 3 on", "/ch/03/mix/on", "button" )
+	);
+
+foreach ($kontrollit as $kontrolli) {
+	echo "<button type=\"button\" class=\"btn btn-lg btn-default\" onclick=\"socket.emit('message','".$kontrolli[1]."');\">".$kontrolli[0]."</button>";
+	echo "<br>\n";
+};
+
+?>
 
 
-
+<br>
+<br>
+<p>
 Received from an OSC app/device at : <div id="status"></div>
-
+</p>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
