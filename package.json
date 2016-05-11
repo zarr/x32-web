@@ -30,7 +30,7 @@
   ],
   "dependencies": {
     "forever": "^0.15.1",
-    "node-osc": "2.0.x",
+    "node-osc": "https://github.com/zarr/node-osc/tarball/15ea4040203a0a570f2392991c380524c9a09346",
     "socket.io": "0.9.x"
   },
   "keywords": [
